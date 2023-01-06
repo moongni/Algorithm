@@ -88,7 +88,7 @@ def dynamic_get_LIS2(S, start=-1):
         cache[start] = 1
 
         for i in range(start, len(S)):
-            if start == -1 or S[start] < S[i]:
+            if S[start] < S[i]:
                 cache[start] = max(cache[start], 1 + dynamic_get_LIS2(S, i))
         
         return cache[start]
