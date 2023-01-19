@@ -1,3 +1,4 @@
+from printBoard import print_board
 """
     점핑 게임
     
@@ -58,15 +59,6 @@ def dynamic_jg(y, x):
     cache[y][x] = dynamic_jg(y, x + jp) or dynamic_jg(y + jp, x)
     
     return cache[y][x]
-
-def print_board(board):
-    for row in board:
-        for col in row:
-            if col < 0:
-                print(f"{col} ", end='')
-            else:
-                print(f" {col} ", end='')
-        print()
 
 print(dynamic_jg(0, 0))
 print_board(cache)

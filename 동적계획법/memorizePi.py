@@ -204,8 +204,6 @@ def classify(s, start, end):
 
     return 10
 
-cache = [-1] * 10_002
-
 def dynamic_pi2(s, start=0):
     # 기저 사례: 수열의 끝에 도달
     if len(s) == start:
@@ -213,7 +211,7 @@ def dynamic_pi2(s, start=0):
         return cache[start]
     
     # 메모이제이션
-    if cache[start] != float("inf"):
+    if cache[start] != -1:
         return cache[start]
     
     cache[start] = float("inf")
@@ -225,19 +223,19 @@ def dynamic_pi2(s, start=0):
             
     return cache[start]
 
-cache = [float("inf")] * 9
+cache = [-1] * 9
 print(dynamic_pi2([1,2,3,4,1,2,3,4]))
 print(cache)
-cache = [float("inf")] * 9
+cache = [-1] * 9
 print(dynamic_pi2([1,1,1,1,1,2,2,2]))
 print(cache)
-cache = [float("inf")] * 9
+cache = [-1] * 9
 print(dynamic_pi2([1,2,1,2,2,2,2,2]))
 print(cache)
-cache = [float("inf")] * 9
+cache = [-1] * 9
 print(dynamic_pi2([2,2,2,2,2,2,2,2]))
 print(cache)
-cache = [float("inf")] * 9
+cache = [-1] * 9
 print(dynamic_pi2([1,2,6,7,3,9,3,9]))
 print(cache)
 

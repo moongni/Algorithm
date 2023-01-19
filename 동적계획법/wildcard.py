@@ -1,3 +1,4 @@
+from printBoard import print_board
 """
     와일드 카드
     다양한 운영체제에서 파일 이름의 일부만으로 파일 이름을 지정하는 방법
@@ -74,15 +75,6 @@ def dynamic_match(s, w):
     return cache[s][w]
 
 # print(dynamic_match(0, 0))
-
-def print_board(board):
-    for row in board:
-        for col in row:
-            if col < 0:
-                print(f"{col} ", end='')
-            else:
-                print(f" {col} ", end='')
-        print()
 
 # print_board(cache)
 

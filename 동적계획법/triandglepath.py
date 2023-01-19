@@ -1,3 +1,4 @@
+from printBoard import print_board
 """
     삼각형 위의 최대 경로
     
@@ -20,21 +21,16 @@ TRIANGLE = [
     [2, 7, 5, 9, 4]
 ]
 
-def recursive_triangle_path(y, x, sum=0):
-    # 기저사례: 삼각형 범위 안에 있는지 확인
-    if x >= len(TRIANGLE[y]):
-        return sum
-
+def recursive_triangle_path(y, x):
     # 기저사례: 맨 아랫줄 도착
     if y == len(TRIANGLE) - 1:
-        return sum + TRIANGLE[y][x]    
+        return TRIANGLE[y][x]    
 
-    # 현재 위치 추가
-    sum += TRIANGLE[y][x]
+    sum = TRIANGLE[y][x]
 
-    return max(recursive_triangle_path(y + 1, x, sum), recursive_triangle_path(y + 1, x + 1, sum))
+    return max(recursive_triangle_path(y + 1, x), recursive_triangle_path(y + 1, x + 1)) + sum
 
-# print(recursive_triangle_path(0,0))
+print(recursive_triangle_path(0,0))
 
 cache = [[-1 for _ in range(len(TRIANGLE))] for _ in range(len(TRIANGLE))]
 
@@ -57,15 +53,6 @@ def dynamic_triangle_path(y, x, sum=0):
     cache[y][x] = max(dynamic_triangle_path(y+1, x, sum), dynamic_triangle_path(y+1, x+1, sum))
 
     return cache[y][x]
-
-def print_board(board):
-    for row in board:
-        for col in row:
-            if col < 0:
-                print(f"{col} ", end='')
-            else:
-                print(f" {col} ", end='')
-        print()
 
 # print(dynamic_triangle_path(0, 0))
 # print_board(cache)
@@ -94,5 +81,5 @@ def dynamic_triangle_path2(y, x):
     
     return cache[y][x]
 
-print(dynamic_triangle_path2(0, 0))
-print_board(cache)
+# print(dynamic_triangle_path2(0, 0))
+# print_board(cache)
