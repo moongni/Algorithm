@@ -56,7 +56,16 @@ https://moongni.github.io/categories/
 ```bash
 🗂️ AI_model
 ├── 📂 baekjoon
-│   └── 📂 수준별로 풀어보기
+│   ├── 📂 검색
+│   ├── 📂 구현
+│   ├── 📂 기타
+│   ├── 📂 수준별로 풀어보기
+│   ├── 📂 자료구조
+│   ├── 📂 재귀
+│   ├── 📂 최단거리
+│   ├── 📂 최소신장트리
+│   ├── 📂 탐욕 알고리즘
+│   └── 📂 BFS-DFS
 ├── 📂 bruteforce
 ├── 📂 programmers
 │   ├── 📂 hash
